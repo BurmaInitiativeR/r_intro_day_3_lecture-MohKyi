@@ -228,12 +228,22 @@ df %>%
 + Use `iris` dataset and calculate sumstat by `Species`. 
 + Select the only observation from `versicolor` and `virginica` sperrcies. 
 
+```{r}
+df %>%
+  group_by(Species) %>%
+  summarise(man = mean(Sepal.Length, na.rm = TRUE), 
+            sd = sd(Sepal.Length, na.rm = TRUE), 
+            median = median(Sepal.Length, na.rm = TRUE),
+            min = min(Sepal.Length, na.rm = TRUE), 
+            max = max(Sepal.Length, na.rm = TRUE))
+```
+
 
 ```{r}
 df<-iris
-head(df)
+
 df%>%
-  filter(Species=="versicolor" |Species=="virginica") %>%
+  filter(Species=="versicolor" | Species=="virginica") %>%
   summarise(man = mean(Sepal.Length, na.rm = TRUE), 
             sd = sd(Sepal.Length, na.rm = TRUE), 
             median = median(Sepal.Length, na.rm = TRUE),
