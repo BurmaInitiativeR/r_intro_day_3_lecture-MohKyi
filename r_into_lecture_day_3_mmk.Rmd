@@ -243,7 +243,8 @@ df %>%
 df<-iris
 
 df%>%
-  filter(Species=="versicolor" | Species=="virginica") %>%
+  filter(Species=="versicolor"|Species=="virginica") %>%
+  group_by(Species) %>%
   summarise(man = mean(Sepal.Length, na.rm = TRUE), 
             sd = sd(Sepal.Length, na.rm = TRUE), 
             median = median(Sepal.Length, na.rm = TRUE),
