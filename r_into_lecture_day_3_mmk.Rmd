@@ -1,6 +1,6 @@
 ---
 title: "r_int_day_3_data_transformation"
-author: "Nicholus Tint Zaw"
+author: "Moh_Kyi"
 date: "2022-11-10"
 output: pdf_document
 ---
@@ -208,6 +208,10 @@ df %>%
   group_by(state) %>%
   summarise(mean = mean(samplesize, na.rm = TRUE))
 
+
+df %>%
+  group_by(population) %>%
+  summarise(mean = mean(samplesize, na.rm = TRUE))
 
 df %>%
   group_by(population) %>%
